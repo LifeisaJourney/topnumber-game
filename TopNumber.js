@@ -9,18 +9,21 @@ export class TopNumber extends React.Component {
     this.state = { 'highest': 0 };
   }
 // componentWillReceiveProps will render before render()
-//Will setState of highest to be the nextProp which is Top Number: {this.props.number}
+// setState of highest to be the nextProps.number which is passed from App.js
   componentWillReceiveProps(nextProps) {
     if (nextProps.number > this.state.highest){
-      this.setState({ highest:nextProps.number
+      this.setState({ 
+        highest: nextProps.number
       });
     }
   }
 
+
+  // Render the display of this.state of highest instead of displaying props.number
   render() {
     return (
       <h1>
-        Top Number: {this.props.number}
+        Top Number: {this.state.highest}
       </h1>
     );
   }
