@@ -28,6 +28,7 @@ export class TopNumber extends React.Component {
     );
   }
 }
+//common way of using componentWillReceiveProps to comparing incoming props to current props or state and decides what to render based on comparison. 
 
 TopNumber.propTypes = {
   number: React.PropTypes.number,
