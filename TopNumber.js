@@ -9,6 +9,10 @@ export class TopNumber extends React.Component {
     this.state = { 'highest': 0 };
   }
 
+  componentWillReceiveProps(nextProps){
+      
+  }
+
   render() {
     return (
       <h1>
