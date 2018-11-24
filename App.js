@@ -32,9 +32,9 @@ class App extends React.Component {
 
   createTarget(key, ms) {
     ms = ms || random(500, 2000);
-    this.intervals.push(setInterval(function(){
+    this.intervals.push(setInterval(function () {
       let targets = clone(this.state.targets);
-      let num = random(1, 1000*1000);
+      let num = random(1, 1000 * 1000);
       targets[key] = targets[key] != 0 ? 0 : num;
       this.setState({ targets: targets });
     }.bind(this), ms));
@@ -80,8 +80,8 @@ class App extends React.Component {
     let targets = [];
     for (let key in this.state.targets) {
       targets.push(
-        <Target 
-          number={this.state.targets[key]} 
+        <Target
+          number={this.state.targets[key]}
           key={key} />
       );
     }
@@ -90,7 +90,7 @@ class App extends React.Component {
         <TopNumber number={this.state.latestClick} game={this.state.game} />
         <Display number={this.state.latestClick} />
         <button onClick={this.startGame} style={buttonStyle}>
-          New Game 
+          New Game
         </button>
         <div style={fieldStyle} onClick={this.hitTarget}>
           {targets}
@@ -101,6 +101,6 @@ class App extends React.Component {
 }
 
 ReactDOM.render(
-  <App />, 
+  <App />,
   document.getElementById('app')
 );
