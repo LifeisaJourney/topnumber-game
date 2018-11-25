@@ -71,6 +71,13 @@ class App extends React.Component {
 
   componentWillMount() {
     this.intervals = [];
+  
+  }
+// Calls the endGame() when the 2nd click is lower than the 1st click which is designated as prevState
+  componentDidUpdate(prevProps, prevState){
+    if (this.state.latestClick < prevState.latestClick){
+      this.endGame();
+    }
   }
 
   render() {
