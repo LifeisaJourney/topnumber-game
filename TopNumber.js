@@ -18,6 +18,15 @@ export class TopNumber extends React.Component {
     }
   }
 
+  //Turns background yellow when it is over the limit with game logic. Otherwise it will be white. 
+  componentWillUpdate(nextProps, nextState){
+    if (document.body.style.background != yellow && this.state.highest >= 950*1000) {
+      document.body.style.background = yellow; 
+    } else if (!this.props.game && nextProps.game) {
+      document.body.style.background = 'white';
+    }
+  }
+
 
   // Render the display of this.state of highest instead of displaying props.number
   render() {
